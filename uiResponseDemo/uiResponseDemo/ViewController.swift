@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+        
         let gesture = UITapGestureRecognizer.init(target: self, action: #selector(viewDidTap(gesture:)))
         //gesture.delegate = self
         self.view.addGestureRecognizer(gesture)
@@ -32,6 +34,19 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         subView1.backgroundColor = UIColor.blue
         self.view.addSubview(subView1)
         
+        let font = UIFont.systemFont(ofSize: 15)
+        let label1 = UILabel.init(frame: CGRect.init(x: 50, y: 50, width: 200, height: 100))
+        label1.font = font
+        label1.numberOfLines = 0
+        label1.text = "哈哈哈哈哈哈\n哈哈哈哈哈哈\n哈哈哈哈哈哈"
+        self.view.addSubview(label1)
+        
+        let param = NSMutableParagraphStyle()
+        param.lineSpacing = 0
+        let label2 = UILabel.init(frame: CGRect.init(x: 50, y: 200, width: 200, height: 100))
+        label2.numberOfLines = 0
+        label2.attributedText = NSAttributedString.init(string: "哈哈哈哈哈哈\n哈哈哈哈哈哈\n哈哈哈哈哈哈", attributes: [.paragraphStyle: param, .font: font])
+        self.view.addSubview(label2)
     }
     
     @objc
